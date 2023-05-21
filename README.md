@@ -1,12 +1,34 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Laravel project-setup 
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
+## colne git url in your server
+```
+sudo git clone -b main https://github.com/Anup-Neupane/laravel-setup.git
+```
+### Go inside repo-folder
+```
+cd laravel-setup
+```
+### make a copy of the .env.example file that Laravel includes by default and name the copy
+```
+cp .env.example .env
+```
+### Add the following content to the .env file
+```
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=laraveluser
+DB_PASSWORD=your_mysql_password
+```
+### Finally, run the following command in the project directory to start the Docker containers
+```
+sudo docker-compose up –build -d
+```
+### Enter the following command to generate the laravel key and save it to the .env file:
+```
+sudo docker exec app php artisan key:generate
+```
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -59,3 +81,5 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
